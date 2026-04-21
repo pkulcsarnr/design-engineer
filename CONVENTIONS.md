@@ -32,5 +32,5 @@ Why tags:
 ## License
 
 - every source needs `license`
-- `license: unknown` => no extraction yet
+- `license: unknown` => allowed
 - repo license covers repo structure, not source-derived content

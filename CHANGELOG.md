@@ -11,7 +11,7 @@ Skill changes. Semver per [`GOVERNANCE.md`](GOVERNANCE.md).
 ### Pending
 - first extraction
 - first eval cases
-- `emil-design-eng` license check
+- pin first SHAs
 
 ## Release template
 

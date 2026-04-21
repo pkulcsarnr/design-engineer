@@ -26,7 +26,7 @@ Notes:
 
 - conflict is classified
 - provenance exists
-- source license is not `unknown`
+- source is tracked in [`sources.yml`](sources.yml)
 
 ## Add source
 

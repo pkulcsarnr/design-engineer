@@ -20,7 +20,7 @@ AI edits. Humans review. Use prompts, not freestyle.
 1. Add provenance to every merged item.
 2. Use only ids + SHAs from [`sources.yml`](sources.yml).
 3. Classify every conflict.
-4. Skip sources with `license: unknown`.
+4. `license: unknown` is allowed. Keep attribution.
 5. Run [`prompts/validate-repo.md`](prompts/validate-repo.md) before PR.
 
 ## Must not

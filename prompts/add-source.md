@@ -44,4 +44,4 @@ Commit: `chore(sources): track {{proposed_id}}`
 ## Post-checks
 
 - run [`validate-repo.md`](validate-repo.md)
-- if license is `unknown`, open follow-up issue before extraction
+- keep license value as-is, incl `unknown`

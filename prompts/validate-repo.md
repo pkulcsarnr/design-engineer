@@ -28,7 +28,7 @@ Then:
 - `C5` every merged skill item has valid provenance tag
 - `C6` resolution tags only appear in `full` and point to real conflict entry
 - `C7` `aligned` items meet threshold
-- `C8` no `unknown`-license source appears in merged content
+- `C8` source ids in merged content exist in `sources.yml`
 - `C9` `misalignment.md` entries match template
 - `C10` eval cases match template
 - `C11` no orphan refs (`source=`, `resolution.id`, `sources_probed`)

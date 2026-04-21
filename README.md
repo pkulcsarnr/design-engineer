@@ -53,7 +53,7 @@ Source of truth: [`sources.yml`](sources.yml).
 | id | author | link | license | sha | reviewed |
 |----|--------|------|---------|-----|----------|
 | [`make-interfaces-feel-better`](https://github.com/jakubkrehel/make-interfaces-feel-better) | Jakub Krehel ([@jakubkrehel](https://github.com/jakubkrehel)) | [repo](https://github.com/jakubkrehel/make-interfaces-feel-better) | MIT | _TBD_ | _TBD_ |
-| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown | _TBD_ | _TBD_ |
+| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown (allowed) | _TBD_ | _TBD_ |
 
 ## Alignment
 

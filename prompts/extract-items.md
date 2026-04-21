@@ -12,7 +12,6 @@ Pull candidate items from one source. Draft only. No merge yet.
 ## Preconditions
 
 - source exists in [`../sources.yml`](../sources.yml)
-- license is not `unknown`
 - local checkout matches pinned SHA
 
 ## Steps
