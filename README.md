@@ -8,16 +8,21 @@ This repository collects, compares, and merges design engineer skills published 
 
 **Why a merge instead of installing each skill separately?** Loading multiple skills causes context bloat, silent conflicts at inference time, and no audit trail when output goes wrong. A merge decision made once — explicitly and reviewably — beats an implicit merge the model performs every turn. See [MOTIVATION.md](MOTIVATION.md) for the full argument, tradeoffs, and when **not** to use this repo.
 
+**This repo is AI-first.** All modifications are performed by AI agents through reusable prompts in [`prompts/`](prompts/). Humans review PRs; they do not hand-edit content. If you are an agent, read [`AGENTS.md`](AGENTS.md) before doing anything.
+
 ## Repo layout
 
 ```
 design-engineer/
-├── README.md                   # this file
+├── README.md                   # this file (human-facing overview)
+├── AGENTS.md                   # operating manual for AI agents — read first if you're an agent
 ├── MOTIVATION.md               # why this repo exists; tradeoffs; when NOT to use it
 ├── CONVENTIONS.md              # provenance tag format; authoring rules
 ├── GOVERNANCE.md               # aligned threshold, takedowns, versioning, cadence
 ├── CHANGELOG.md                # per-release notes for the merged skills
 ├── sources.yml                 # machine-readable manifest of tracked sources (pinned SHAs)
+├── prompts/                    # reusable agent prompts — one per standard operation
+├── schemas/                    # machine-checkable shapes for structured files
 ├── sources/                    # local-only workspace (gitignored) for reviewing originals
 │   └── README.md               # how to clone the tracked upstream repos locally
 ├── skills/                     # deliverables — installable agent skills
@@ -32,6 +37,8 @@ design-engineer/
 
 Key entry points:
 
+- Agent operating manual: [`AGENTS.md`](AGENTS.md)
+- Agent prompt library: [`prompts/README.md`](prompts/README.md)
 - Why this repo exists: [`MOTIVATION.md`](MOTIVATION.md)
 - Installable skills: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
 - Source manifest (source of truth): [`sources.yml`](sources.yml)

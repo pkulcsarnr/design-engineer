@@ -51,16 +51,16 @@ sources_probed: [<source-id>, <source-id>]
 pass | partial | fail — <one-line rationale>
 ```
 
-## Running evals
+## Authoring and running evals
 
-Currently manual:
+- **Authoring:** do not hand-write case files. Use [`../prompts/author-eval.md`](../prompts/author-eval.md), which copies from the canonical template at [`../schemas/eval-case.template.md`](../schemas/eval-case.template.md) and enforces the shape.
+- **Running (manual):**
+  1. Load the skill variant under test into your agent of choice.
+  2. Paste the prompt from `cases/<id>.md`.
+  3. Check observed behaviors against expected and anti-behaviors.
+  4. Commit the updated case file with `observed output` and `verdict` filled in.
 
-1. Load the skill variant under test into your agent of choice.
-2. Paste the prompt from `cases/<id>.md`.
-3. Check observed behaviors against expected and anti-behaviors.
-4. Commit the updated case file with `observed output` and `verdict` filled in.
-
-Automation is out of scope for v1 — manual runs are enough to catch gross regressions.
+Automated eval runners are out of scope for v1 — manual runs are enough to catch gross regressions. The structured case shape is designed so a runner can be added later without reauthoring cases.
 
 ## Minimum eval coverage before tagging a skill release
 

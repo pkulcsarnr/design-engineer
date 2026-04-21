@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/peter-kulcsar/design-engineer/schemas/sources.schema.json",
+  "title": "design-engineer sources manifest",
+  "description": "Shape of sources.yml. Every tracked source must conform.",
+  "type": "object",
+  "required": ["version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/Source" }
+    }
+  },
+  "$defs": {
+    "Source": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "author",
+        "url",
+        "license",
+        "pinned_sha",
+        "last_reviewed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "kebab-case; no author name; stable; unique."
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "author": {
+          "type": "object",
+          "required": ["name", "github"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "github": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
+              "description": "GitHub handle, no leading '@'."
+            }
+          }
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical URL to the skill, not to the author account."
+        },
+        "license": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "CC-BY-4.0", "ISC", "unknown"]
+            }
+          ]
+        },
+        "license_path": {
+          "type": ["string", "null"],
+          "description": "Path inside the upstream repo to the LICENSE file, or null if not present."
+        },
+        "pinned_sha": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+            { "type": "string", "const": "TBD" }
+          ],
+          "description": "Full 40-char commit SHA, or 'TBD' while not yet pinned."
+        },
+        "last_reviewed": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            { "type": "string", "const": "TBD" }
+          ],
+          "description": "ISO 8601 date (YYYY-MM-DD) or 'TBD' while not yet reviewed."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
