@@ -1,108 +1,94 @@
 # design-engineer
 
-An aggregator of **design engineer skills** from across the community.
+Merge design-engineer skills into 2 outputs:
 
-## What this is
+- `aligned` = shared guidance only
+- `full` = merged guidance + open conflict handling
 
-This repository collects, compares, and merges design engineer skills published by different authors and organizations, and publishes two merged skills — `aligned` (consensus only) and `full` (everything, with conflicts resolved in the open).
+AI-first repo: agents edit via [`prompts/`](prompts/). Humans review. Agents start with [`AGENTS.md`](AGENTS.md).
 
-**Why a merge instead of installing each skill separately?** Loading multiple skills causes context bloat, silent conflicts at inference time, and no audit trail when output goes wrong. A merge decision made once — explicitly and reviewably — beats an implicit merge the model performs every turn. See [MOTIVATION.md](MOTIVATION.md) for the full argument, tradeoffs, and when **not** to use this repo.
+## Why
 
-**This repo is AI-first.** All modifications are performed by AI agents through reusable prompts in [`prompts/`](prompts/). Humans review PRs; they do not hand-edit content. If you are an agent, read [`AGENTS.md`](AGENTS.md) before doing anything.
+Many skills loaded together = more ctx, hidden conflicts, weak audit trail. Better: merge once, write it down, review it. See [`MOTIVATION.md`](MOTIVATION.md).
 
-## Repo layout
+## Repo map
 
-```
-design-engineer/
-├── README.md                   # this file (human-facing overview)
-├── AGENTS.md                   # operating manual for AI agents — read first if you're an agent
-├── MOTIVATION.md               # why this repo exists; tradeoffs; when NOT to use it
-├── CONVENTIONS.md              # provenance tag format; authoring rules
-├── GOVERNANCE.md               # aligned threshold, takedowns, versioning, cadence
-├── CHANGELOG.md                # per-release notes for the merged skills
-├── sources.yml                 # machine-readable manifest of tracked sources (pinned SHAs)
-├── prompts/                    # reusable agent prompts — one per standard operation
-├── schemas/                    # machine-checkable shapes for structured files
-├── sources/                    # local-only workspace (gitignored) for reviewing originals
-│   └── README.md               # how to clone the tracked upstream repos locally
-├── skills/                     # deliverables — installable agent skills
-│   ├── design-engineer-aligned/SKILL.md
-│   └── design-engineer-full/SKILL.md
-├── analysis/                   # comparison work that feeds the skills above
-│   ├── alignment.md            # per-topic agreements
-│   └── misalignment.md         # typed conflicts + resolution strategies
-└── evals/                      # validation that the merged skills actually work
-    └── README.md
+```text
+README.md
+AGENTS.md
+MOTIVATION.md
+CONVENTIONS.md
+GOVERNANCE.md
+CHANGELOG.md
+sources.yml
+prompts/
+schemas/
+sources/
+skills/
+analysis/
+evals/
 ```
 
-Key entry points:
+Quick links:
 
-- Agent operating manual: [`AGENTS.md`](AGENTS.md)
-- Agent prompt library: [`prompts/README.md`](prompts/README.md)
-- Why this repo exists: [`MOTIVATION.md`](MOTIVATION.md)
-- Installable skills: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
-- Source manifest (source of truth): [`sources.yml`](sources.yml)
-- Authoring rules: [`CONVENTIONS.md`](CONVENTIONS.md)
-- Policies: [`GOVERNANCE.md`](GOVERNANCE.md)
-- Analysis: [`analysis/alignment.md`](analysis/alignment.md), [`analysis/misalignment.md`](analysis/misalignment.md)
-- Validation: [`evals/README.md`](evals/README.md)
-- Release history: [`CHANGELOG.md`](CHANGELOG.md)
-- Local sources workspace: [`sources/README.md`](sources/README.md)
+- agent guide: [`AGENTS.md`](AGENTS.md)
+- prompts: [`prompts/README.md`](prompts/README.md)
+- rules: [`CONVENTIONS.md`](CONVENTIONS.md)
+- policy: [`GOVERNANCE.md`](GOVERNANCE.md)
+- sources: [`sources.yml`](sources.yml)
+- outputs: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
+- analysis: [`analysis/alignment.md`](analysis/alignment.md), [`analysis/misalignment.md`](analysis/misalignment.md)
+- evals: [`evals/README.md`](evals/README.md)
 
 ## Principles
 
-- **Full credit to original authors.** Every skill included here retains attribution to its source (author, repository, and license where applicable).
-- **Actively seeking more sources.** If you know of a design engineer skill set we should include, please open an issue or PR.
-- **Respect for authors.** If any source author would like their content removed, we will remove it as soon as possible — just open an issue or contact the maintainer.
+- full credit
+- more sources welcome
+- remove fast if author asks
 
 ## Sources
 
-The authoritative list of tracked sources with pinned commit SHAs, licenses, and review dates lives in [`sources.yml`](sources.yml). The table below is a human-friendly summary kept in sync with that file.
+Source of truth: [`sources.yml`](sources.yml).
 
-| Source id | Author | Link | License | Pinned SHA | Last reviewed |
-|-----------|--------|------|---------|------------|---------------|
+| id | author | link | license | sha | reviewed |
+|----|--------|------|---------|-----|----------|
 | [`make-interfaces-feel-better`](https://github.com/jakubkrehel/make-interfaces-feel-better) | Jakub Krehel ([@jakubkrehel](https://github.com/jakubkrehel)) | [repo](https://github.com/jakubkrehel/make-interfaces-feel-better) | MIT | _TBD_ | _TBD_ |
-| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown (pending confirmation) | _TBD_ | _TBD_ |
+| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown | _TBD_ | _TBD_ |
 
-## Alignment table
+## Alignment
 
-Skills and concepts that appear across multiple sources — where there is broad agreement. Detailed, per-topic evidence lives in [`analysis/alignment.md`](analysis/alignment.md).
+Shared items live in [`analysis/alignment.md`](analysis/alignment.md).
 
-| Skill / Concept | Sources in agreement | Notes |
-|-----------------|----------------------|-------|
-| _TBD_           | _TBD_                | _TBD_ |
+| topic | sources | note |
+|-------|---------|------|
+| _TBD_ | _TBD_   | _TBD_ |
 
-## Misalignment table
+## Misalignment
 
-Skills and concepts where sources disagree, or where the framing / scope / emphasis differs meaningfully. Detailed positions and resolution notes live in [`analysis/misalignment.md`](analysis/misalignment.md).
+Conflicts + resolutions live in [`analysis/misalignment.md`](analysis/misalignment.md).
 
-| Skill / Concept | Source A position | Source B position | Nature of disagreement |
-|-----------------|-------------------|-------------------|------------------------|
-| _TBD_           | _TBD_             | _TBD_             | _TBD_                  |
+| topic | source A | source B | type |
+|-------|----------|----------|------|
+| _TBD_ | _TBD_    | _TBD_    | _TBD_ |
 
-## Skill versions
+## Outputs
 
-We publish two versions of the aggregated skill set:
+1. `aligned` -> safer, narrower, consensus-led. See [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md).
+2. `full` -> broader, merged, conflict-aware. See [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md).
 
-1. **Aligned** — only the skills and guidance that all (or the large majority of) sources agree on. Conservative, high-confidence baseline. See [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md).
-2. **Full** — all skills from all sources, merged and deduplicated, with conflicts resolved or noted. Broader coverage, includes contested material. See [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md).
+## Use
 
-## Using the skills
+- copy `skills/design-engineer-aligned/` or `skills/design-engineer-full/`
+- or load raw `SKILL.md`
 
-The `SKILL.md` files follow the agent-skill conventions used by the upstream sources. Until a formal installer / registry entry is confirmed, the supported usage is:
+No claim yet that `npx skills add <repo>` works.
 
-- **Manual copy.** Copy `skills/design-engineer-aligned/` or `skills/design-engineer-full/` into your agent's skills directory.
-- **Direct load.** Point your agent's skill loader at the raw `SKILL.md` file path.
+## Removal
 
-We are not yet claiming `npx skills add <this-repo>` works — that will be verified (and documented here) before being promised. See [`evals/README.md`](evals/README.md) for how we validate the skills themselves.
+If you're source author and want removal, open issue or contact maintainer. SLA: ack in 48h, PR in 7d. See [`GOVERNANCE.md`](GOVERNANCE.md#remove-source).
 
-## Removal requests
+## Contrib
 
-If you are the author of a source included here and would like it removed, please open an issue or reach out to the maintainer. We will acknowledge within 48 hours and ship the removal PR within 7 days. The full takedown playbook is documented in [`GOVERNANCE.md`](GOVERNANCE.md#removing-a-source-takedown-requests).
-
-## Contributing
-
-- Suggest a new source by opening an issue with a link, author info, and license.
-- Before extracting content from a new source, land a PR that adds it to [`sources.yml`](sources.yml) per [`GOVERNANCE.md`](GOVERNANCE.md#adding-a-source).
-- Every merged-skill item must carry a provenance tag per [`CONVENTIONS.md`](CONVENTIONS.md).
-- All contributions must preserve attribution to original authors.
+- add source -> first update [`sources.yml`](sources.yml)
+- extracted items need provenance tags
+- keep attribution intact

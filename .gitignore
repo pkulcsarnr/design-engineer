@@ -1,4 +1,4 @@
-# Ignore local-only sources workspace, but keep the committed README
+# keep local sources out of git
 sources/*
 !sources/README.md
 
@@ -9,5 +9,5 @@ sources/*
 .vscode/
 .idea/
 
-# Node (in case tooling is added later)
+# Node
 node_modules/

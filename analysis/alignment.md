@@ -1,26 +1,24 @@
 # Alignment
 
-Detailed, per-topic agreements across the tracked sources. Each entry should cite the specific source file / section that supports the consensus.
+Shared items across sources.
 
-> Status: **placeholder**. Analysis not yet performed.
+Status: placeholder.
 
-## How to read this file
+## Entry shape
 
-- **Topic** — the skill or concept being compared.
-- **Sources in agreement** — which tracked sources include this topic.
-- **Consensus statement** — the common ground, phrased source-agnostically.
-- **Evidence** — direct pointers (file path + section) in each source.
+- topic
+- agreeing sources
+- merged statement
+- evidence
 
 ## Topics
 
 ### _TBD_
 
-| Field | Value |
+| field | value |
 |-------|-------|
-| Sources in agreement | _TBD_ |
-| Consensus statement | _TBD_ |
-| Evidence | _TBD_ |
+| sources | _TBD_ |
+| statement | _TBD_ |
+| evidence | _TBD_ |
 
----
-
-Sources tracked in this repo are listed in the top-level [README](../README.md).
+Source list: [`../README.md`](../README.md)

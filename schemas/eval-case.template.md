@@ -6,7 +6,7 @@ sources_probed: [{{source_id_1}}{{, source_id_2}}]
 
 ## Prompt
 
-{{The prompt given to the agent. Concrete, self-contained, reproducible.}}
+{{prompt}}
 
 ## Setup
 
@@ -14,18 +14,18 @@ sources_probed: [{{source_id_1}}{{, source_id_2}}]
 
 ## Expected behaviors
 
-- [ ] {{specific, independently verifiable behavior 1}}
-- [ ] {{specific, independently verifiable behavior 2}}
+- [ ] {{expected behavior 1}}
+- [ ] {{expected behavior 2}}
 
 ## Anti-behaviors
 
-- [ ] {{specific wrong answer the skill should prevent 1}}
-- [ ] {{specific wrong answer the skill should prevent 2}}
+- [ ] {{bad output 1}}
+- [ ] {{bad output 2}}
 
 ## Observed output
 
-{{Paste the agent's response on first run. Leave empty until run.}}
+{{agent output}}
 
 ## Verdict
 
-{{pass | partial | fail}} — {{one-line rationale, or leave empty until run}}
+{{pass | partial | fail}} - {{why}}

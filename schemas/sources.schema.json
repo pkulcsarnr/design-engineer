@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/peter-kulcsar/design-engineer/schemas/sources.schema.json",
   "title": "design-engineer sources manifest",
-  "description": "Shape of sources.yml. Every tracked source must conform.",
+  "description": "Schema for sources.yml.",
   "type": "object",
   "required": ["version", "sources"],
   "additionalProperties": false,
@@ -34,7 +34,7 @@
         "id": {
           "type": "string",
           "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-          "description": "kebab-case; no author name; stable; unique."
+          "description": "kebab-case, stable, unique."
         },
         "name": { "type": "string", "minLength": 1 },
         "author": {
@@ -46,40 +46,48 @@
             "github": {
               "type": "string",
               "pattern": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
-              "description": "GitHub handle, no leading '@'."
+              "description": "GitHub handle, no '@'."
             }
           }
         },
         "url": {
           "type": "string",
           "format": "uri",
-          "description": "Canonical URL to the skill, not to the author account."
+          "description": "Canonical skill URL."
         },
         "license": {
           "oneOf": [
             {
               "type": "string",
-              "enum": ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "CC-BY-4.0", "ISC", "unknown"]
+              "enum": [
+                "MIT",
+                "Apache-2.0",
+                "BSD-2-Clause",
+                "BSD-3-Clause",
+                "CC-BY-4.0",
+                "ISC",
+                "unknown"
+              ]
             }
           ]
         },
         "license_path": {
           "type": ["string", "null"],
-          "description": "Path inside the upstream repo to the LICENSE file, or null if not present."
+          "description": "Upstream LICENSE path, or null."
         },
         "pinned_sha": {
           "oneOf": [
             { "type": "string", "pattern": "^[0-9a-f]{40}$" },
             { "type": "string", "const": "TBD" }
           ],
-          "description": "Full 40-char commit SHA, or 'TBD' while not yet pinned."
+          "description": "40-char SHA, or 'TBD'."
         },
         "last_reviewed": {
           "oneOf": [
             { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
             { "type": "string", "const": "TBD" }
           ],
-          "description": "ISO 8601 date (YYYY-MM-DD) or 'TBD' while not yet reviewed."
+          "description": "YYYY-MM-DD, or 'TBD'."
         },
         "notes": { "type": "string" }
       }

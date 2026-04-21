@@ -1,10 +1,8 @@
-# Provenance and resolution tag spec
+# Provenance spec
 
-Canonical shape for the HTML-comment tags that precede every item in [`../skills/design-engineer-aligned/SKILL.md`](../skills/design-engineer-aligned/SKILL.md) and [`../skills/design-engineer-full/SKILL.md`](../skills/design-engineer-full/SKILL.md).
+Source of truth for skill tags. Do not copy regex elsewhere.
 
-This file is the single source of truth. [`../CONVENTIONS.md`](../CONVENTIONS.md) and every prompt reference this file; do not duplicate the regex elsewhere.
-
-## Provenance tag
+## Provenance
 
 ### Regex
 
@@ -14,27 +12,25 @@ This file is the single source of truth. [`../CONVENTIONS.md`](../CONVENTIONS.md
 
 ### Rules
 
-1. One per item, placed on the line immediately preceding the item's heading or content.
-2. Every `source=` value MUST appear as an `id` in [`../sources.yml`](../sources.yml).
-3. Every `sha=` value MUST be the first 7 chars of the `pinned_sha` currently recorded for that source in `../sources.yml`.
-4. `section` is a literal quoted string — either the exact heading text or a stable anchor from the upstream file.
-5. Multiple citations are separated by ` | ` (space-pipe-space). Order: alphabetical by source id.
+1. one per item, line above item
+2. `source=` must exist in [`../sources.yml`](../sources.yml)
+3. `sha=` must match pinned short SHA
+4. `section` is exact heading / stable anchor
+5. multi-source order: alpha by source id
 
 ### Examples
-
-Single source:
 
 ```markdown
 <!-- provenance: source=emil-design-eng sha=abc1234 section="Tabular numbers" -->
 ```
 
-Multiple sources (alignment):
+Multi-source:
 
 ```markdown
 <!-- provenance: source=emil-design-eng sha=def5678 section="Numbers in UI" | source=make-interfaces-feel-better sha=abc1234 section="Tabular numbers for dynamic values" -->
 ```
 
-## Resolution tag
+## Resolution
 
 ### Regex
 
@@ -44,10 +40,10 @@ Multiple sources (alignment):
 
 ### Rules
 
-1. Present ONLY on items in `../skills/design-engineer-full/SKILL.md` (never in the aligned skill).
-2. Placed on the line immediately after the provenance tag.
-3. `id` MUST match an entry id in [`../analysis/misalignment.md`](../analysis/misalignment.md).
-4. `strategy` MUST match the recorded strategy for that entry.
+1. only in `full`
+2. line right below provenance
+3. `id` must exist in [`../analysis/misalignment.md`](../analysis/misalignment.md)
+4. `strategy` must match conflict entry
 
 ### Example
 
@@ -58,12 +54,12 @@ Multiple sources (alignment):
 
 ## Violations
 
-The self-check in [`../prompts/validate-repo.md`](../prompts/validate-repo.md) reports a violation for any of:
+Validator fails if:
 
-- An item in `skills/**/*.md` with no provenance tag.
-- A provenance tag that does not match the regex above.
-- A `source=` value not in `sources.yml`.
-- A `sha=` value that does not match the current pinned SHA for that source.
-- A resolution tag outside `design-engineer-full/SKILL.md`.
-- A resolution tag whose `id` is not present in `analysis/misalignment.md`.
-- A resolution tag whose `strategy` differs from the strategy recorded for that id.
+- item has no provenance tag
+- tag regex fails
+- source id missing
+- SHA mismatch
+- resolution tag outside `full`
+- bad `resolution.id`
+- bad `resolution.strategy`

@@ -1,18 +1,3 @@
-# Tracked sources for design-engineer aggregation.
-# This is the single source of truth. All provenance tags in skills/**/*.md
-# MUST reference a source 'id' and 'sha' present in this file.
-#
-# Fields:
-#   id           : stable kebab-case identifier used in provenance tags
-#   name         : human-readable name
-#   author       : author name and github handle
-#   url          : canonical URL to the skill (not the author's account)
-#   license      : SPDX identifier, "unknown", or a short free-form note with a path
-#   license_path : relative path inside the source repo to the license file (optional)
-#   pinned_sha   : full 40-char commit SHA the current merged skills are derived from
-#   last_reviewed: YYYY-MM-DD of the last time a maintainer compared upstream HEAD to pinned_sha
-#   notes        : free-form; e.g. which subpath of a multi-skill repo we care about
-
 version: 1
 
 sources:
@@ -27,7 +12,7 @@ sources:
     pinned_sha: TBD
     last_reviewed: TBD
     notes: |
-      Skill lives at skills/make-interfaces-feel-better/SKILL.md in the upstream repo.
+      Upstream file: skills/make-interfaces-feel-better/SKILL.md
 
   - id: emil-design-eng
     name: emil-design-eng
@@ -40,6 +25,6 @@ sources:
     pinned_sha: TBD
     last_reviewed: TBD
     notes: |
-      Subtree of emilkowalski/skill. Upstream repo has multiple skills; we only
-      track the emil-design-eng subfolder. License needs to be confirmed with
-      the author before extracting content.
+      Subdir of emilkowalski/skill.
+      Track only skills/emil-design-eng.
+      Confirm license before extraction.

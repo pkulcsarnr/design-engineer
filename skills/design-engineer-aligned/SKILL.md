@@ -1,19 +1,19 @@
 ---
 name: design-engineer-aligned
-description: Consensus-only design engineering skills — only guidance that all (or the large majority of) aggregated sources agree on. Conservative, high-confidence baseline for AI coding assistants building UIs.
+description: Consensus-only design-engineer skill. Shared guidance only.
 ---
 
-# Design Engineer — Aligned
+# Design Engineer - Aligned
 
-> Status: **placeholder**. Content not yet derived from sources.
+Status: placeholder.
 
-This skill contains the **intersection** of design engineering guidance across all tracked sources listed in the repo-level [README](../../README.md). Only skills present in multiple sources, with compatible framing, are included here.
+Only shared guidance goes here.
 
-See [`../../analysis/alignment.md`](../../analysis/alignment.md) for the per-topic evidence supporting each entry and [`../../MOTIVATION.md`](../../MOTIVATION.md) for why this skill exists.
+See [`../../analysis/alignment.md`](../../analysis/alignment.md) and [`../../MOTIVATION.md`](../../MOTIVATION.md).
 
 ## Authoring rules
 
-Every item below MUST carry a provenance tag per [`../../CONVENTIONS.md`](../../CONVENTIONS.md). Example:
+Every item needs provenance tag. See [`../../CONVENTIONS.md`](../../CONVENTIONS.md).
 
 ```markdown
 <!-- provenance: source=make-interfaces-feel-better sha=abc1234 section="Tabular numbers" | source=emil-design-eng sha=def5678 section="Numbers in UI" -->
@@ -21,12 +21,12 @@ Every item below MUST carry a provenance tag per [`../../CONVENTIONS.md`](../../
 ...
 ```
 
-Items without provenance tags MUST NOT be merged.
+No provenance => no merge.
 
 ## Skills
 
-_TBD — to be populated from source analysis. Each entry begins with a provenance tag._
+_TBD_
 
 ## Attribution
 
-Derived from the sources listed in [`/README.md`](../../README.md) and machine-tracked in [`/sources.yml`](../../sources.yml). All credit to original authors; their licenses are preserved per-item via provenance tags.
+Derived from tracked sources in [`../../README.md`](../../README.md) + [`../../sources.yml`](../../sources.yml).
