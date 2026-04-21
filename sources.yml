@@ -7,12 +7,15 @@ sources:
       name: Jakub Krehel
       github: jakubkrehel
     url: https://github.com/jakubkrehel/make-interfaces-feel-better
-    license: MIT
-    license_path: LICENSE
-    pinned_sha: TBD
-    last_reviewed: TBD
+    license: unknown
+    license_path: null
+    pinned_sha: 384562064fcdd99778fcbafd8729626fe6aab02f
+    last_reviewed: 2026-04-21
     notes: |
       Upstream file: skills/make-interfaces-feel-better/SKILL.md
+      Plus topic files: typography.md, surfaces.md, animations.md, performance.md.
+      No LICENSE file at pinned SHA. Repo README calls it an Agent Skill.
+      License unknown. Allowed by repo policy.
 
   - id: emil-design-eng
     name: emil-design-eng
@@ -22,9 +25,10 @@ sources:
     url: https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng
     license: unknown
     license_path: null
-    pinned_sha: TBD
-    last_reviewed: TBD
+    pinned_sha: ecf66bbd1fb33c25332b6b0e454d08049978284c
+    last_reviewed: 2026-04-21
     notes: |
       Subdir of emilkowalski/skill.
-      Track only skills/emil-design-eng.
-      License unknown. Allowed.
+      Track only skills/emil-design-eng/SKILL.md.
+      No LICENSE file at pinned SHA.
+      License unknown. Allowed by repo policy.

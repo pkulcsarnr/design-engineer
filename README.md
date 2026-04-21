@@ -52,8 +52,8 @@ Source of truth: [`sources.yml`](sources.yml).
 
 | id | author | link | license | sha | reviewed |
 |----|--------|------|---------|-----|----------|
-| [`make-interfaces-feel-better`](https://github.com/jakubkrehel/make-interfaces-feel-better) | Jakub Krehel ([@jakubkrehel](https://github.com/jakubkrehel)) | [repo](https://github.com/jakubkrehel/make-interfaces-feel-better) | MIT | _TBD_ | _TBD_ |
-| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown (allowed) | _TBD_ | _TBD_ |
+| [`make-interfaces-feel-better`](https://github.com/jakubkrehel/make-interfaces-feel-better) | Jakub Krehel ([@jakubkrehel](https://github.com/jakubkrehel)) | [repo](https://github.com/jakubkrehel/make-interfaces-feel-better) | unknown (allowed) | `3845620` | 2026-04-21 |
+| [`emil-design-eng`](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | Emil Kowalski ([@emilkowalski](https://github.com/emilkowalski)) | [repo](https://github.com/emilkowalski/skill/tree/main/skills/emil-design-eng) | unknown (allowed) | `ecf66bb` | 2026-04-21 |
 
 ## Alignment
 
@@ -61,7 +61,12 @@ Shared items live in [`analysis/alignment.md`](analysis/alignment.md).
 
 | topic | sources | note |
 |-------|---------|------|
-| _TBD_ | _TBD_   | _TBD_ |
+| Prefer CSS transitions over keyframes for interruptible UI | `emil-design-eng`, `make-interfaces-feel-better` | both scope to interactive state changes |
+| Never use `transition: all` — list exact properties | `emil-design-eng`, `make-interfaces-feel-better` | both explicitly ban the shorthand |
+| Only animate GPU-compositable properties (transform, opacity, filter, clip-path) | `emil-design-eng`, `make-interfaces-feel-better` | same property set, same rationale |
+| Subtle scale-down on press (0.96–0.97) for tactile feedback | `emil-design-eng`, `make-interfaces-feel-better` | exact value differs; see misalignment |
+| Split and stagger grouped entry animations | `emil-design-eng`, `make-interfaces-feel-better` | exact timing differs; see misalignment |
+| Output UI reviews as a markdown Before/After table | `emil-design-eng`, `make-interfaces-feel-better` | column count differs; see misalignment |
 
 ## Misalignment
 
@@ -69,7 +74,11 @@ Conflicts + resolutions live in [`analysis/misalignment.md`](analysis/misalignme
 
 | topic | source A | source B | type |
 |-------|----------|----------|------|
-| _TBD_ | _TBD_    | _TBD_    | _TBD_ |
+| `scale-on-press-value` | `emil-design-eng` (0.97, range 0.95–0.98) | `make-interfaces-feel-better` (0.96 exact) | emphasis-difference |
+| `stagger-timing` | `emil-design-eng` (30–80ms per item) | `make-interfaces-feel-better` (~100ms per group) | emphasis-difference |
+| `icon-swap-entry-scale` | `emil-design-eng` (never from scale(0); start ≥0.9) | `make-interfaces-feel-better` (icon swaps start at scale 0.25) | scope-difference |
+| `icon-swap-bounce` | `emil-design-eng` (0.1–0.3 when used, else 0) | `make-interfaces-feel-better` (always 0 for icon swaps) | scope-difference |
+| `review-table-columns` | `emil-design-eng` (Before / After / Why) | `make-interfaces-feel-better` (Before / After, grouped by principle) | emphasis-difference |
 
 ## Outputs
 
