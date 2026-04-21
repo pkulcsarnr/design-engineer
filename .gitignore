@@ -1,0 +1,13 @@
+# Ignore local-only sources workspace, but keep the committed README
+sources/*
+!sources/README.md
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Node (in case tooling is added later)
+node_modules/

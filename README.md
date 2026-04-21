@@ -6,6 +6,25 @@ An aggregator of **design engineer skills** from across the community.
 
 This repository collects, compares, and merges design engineer skills published by different authors and organizations. The goal is to provide a single reference that makes it easy to see where sources agree, where they disagree, and to use a consolidated version in your own workflow.
 
+## Repo layout
+
+```
+design-engineer/
+├── README.md                   # this file
+├── sources/                    # local-only workspace (gitignored) for reviewing originals
+│   └── README.md               # how to clone the tracked upstream repos locally
+├── skills/                     # deliverables — installable agent skills
+│   ├── design-engineer-aligned/SKILL.md
+│   └── design-engineer-full/SKILL.md
+└── analysis/                   # comparison work that feeds the skills above
+    ├── alignment.md
+    └── misalignment.md
+```
+
+- Installable skills: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
+- Detailed analysis: [`analysis/alignment.md`](analysis/alignment.md), [`analysis/misalignment.md`](analysis/misalignment.md)
+- Local sources workspace: [`sources/README.md`](sources/README.md)
+
 ## Principles
 
 - **Full credit to original authors.** Every skill included here retains attribution to its source (author, repository, and license where applicable).
@@ -23,7 +42,7 @@ We maintain a list of the sources we aggregate from. Each source is linked and c
 
 ## Alignment table
 
-Skills and concepts that appear across multiple sources — where there is broad agreement.
+Skills and concepts that appear across multiple sources — where there is broad agreement. Detailed, per-topic evidence lives in [`analysis/alignment.md`](analysis/alignment.md).
 
 | Skill / Concept | Sources in agreement | Notes |
 |-----------------|----------------------|-------|
@@ -31,7 +50,7 @@ Skills and concepts that appear across multiple sources — where there is broad
 
 ## Misalignment table
 
-Skills and concepts where sources disagree, or where the framing / scope / emphasis differs meaningfully.
+Skills and concepts where sources disagree, or where the framing / scope / emphasis differs meaningfully. Detailed positions and resolution notes live in [`analysis/misalignment.md`](analysis/misalignment.md).
 
 | Skill / Concept | Source A position | Source B position | Nature of disagreement |
 |-----------------|-------------------|-------------------|------------------------|
@@ -41,8 +60,8 @@ Skills and concepts where sources disagree, or where the framing / scope / empha
 
 We publish two versions of the aggregated skill set:
 
-1. **Aligned** — only the skills and guidance that all (or the large majority of) sources agree on. Conservative, high-confidence baseline.
-2. **Full** — all skills from all sources, merged and deduplicated, with conflicts resolved or noted. Broader coverage, includes contested material.
+1. **Aligned** — only the skills and guidance that all (or the large majority of) sources agree on. Conservative, high-confidence baseline. See [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md).
+2. **Full** — all skills from all sources, merged and deduplicated, with conflicts resolved or noted. Broader coverage, includes contested material. See [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md).
 
 ## Removal requests
 
