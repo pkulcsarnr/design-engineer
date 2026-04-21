@@ -31,11 +31,13 @@ ln -s _emilkowalski-skill/skills/emil-design-eng sources/emil-design-eng
 
 ## Updating
 
-Sources are pinned manually. When refreshing:
+Sources are pinned in [`../sources.yml`](../sources.yml) (the single source of truth for commit SHAs). When refreshing:
 
-1. `cd` into the source folder and `git pull`.
-2. Record the new commit SHA in the relevant `analysis/` notes so diffs are reproducible.
-3. Re-run comparisons and update `skills/design-engineer-aligned/` and `skills/design-engineer-full/` as needed.
+1. `cd` into the source folder and `git fetch`.
+2. Check out the SHA currently pinned in `../sources.yml` for that source to see what the merged skills were derived from.
+3. Diff against `origin/main` (or the upstream default branch) to see what changed.
+4. If adopting the new upstream: bump `pinned_sha` and `last_reviewed` in `../sources.yml`, then re-run comparisons and update `../skills/design-engineer-aligned/SKILL.md` and `../skills/design-engineer-full/SKILL.md` plus the analysis files.
+5. Every touched provenance tag in the merged skills MUST reference the new short SHA.
 
 ## Attribution
 
