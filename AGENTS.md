@@ -4,10 +4,12 @@ Read first.
 
 ## Repo
 
-This repo tracks source skills in [`sources.yml`](sources.yml), compares them in [`analysis/alignment.md`](analysis/alignment.md) + [`analysis/misalignment.md`](analysis/misalignment.md), and ships 2 merged skills:
+This repo tracks source skills in [`sources.yml`](sources.yml), compares them in [`analysis/alignment.md`](analysis/alignment.md) + [`analysis/misalignment.md`](analysis/misalignment.md), and ships 4 skills:
 
 - [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md)
 - [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
+- [`skills/design-engineer-opinionated/SKILL.md`](skills/design-engineer-opinionated/SKILL.md)
+- [`skills/design-engineer-extended/SKILL.md`](skills/design-engineer-extended/SKILL.md)
 
 Why this exists: [`MOTIVATION.md`](MOTIVATION.md).
 
@@ -49,6 +51,7 @@ If docs conflict, stop and flag it.
 | extract items | [`prompts/extract-items.md`](prompts/extract-items.md) |
 | classify | [`prompts/classify-conflict.md`](prompts/classify-conflict.md) |
 | resolve conflict | [`prompts/resolve-conflict.md`](prompts/resolve-conflict.md) |
+| author opinionated skill | [`prompts/author-opinionated-skill.md`](prompts/author-opinionated-skill.md) |
 | author eval | [`prompts/author-eval.md`](prompts/author-eval.md) |
 | validate repo | [`prompts/validate-repo.md`](prompts/validate-repo.md) |
 | cut release | [`prompts/cut-release.md`](prompts/cut-release.md) |

@@ -16,8 +16,10 @@ This repo ships:
 
 - `design-engineer-aligned` = consensus only
 - `design-engineer-full` = merged set + logged conflict handling
+- `design-engineer-opinionated` = maintainer-authored UI tactics, tagged separately from tracked sources
+- `design-engineer-extended` = `full` + `opinionated`, `full` wins on conflicts
 
-Goal: one coherent skill, not random mix.
+Goal: one coherent skill, not random mix. Keep audited merged output and opinionated output labeled separately so trust boundaries stay clear.
 
 ## Tradeoffs
 

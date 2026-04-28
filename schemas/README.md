@@ -6,6 +6,7 @@ Machine-checkable shapes used by [`../prompts/validate-repo.md`](../prompts/vali
 |------|-----|
 | [`sources.schema.json`](sources.schema.json) | `sources.yml` |
 | [`provenance.md`](provenance.md) | provenance + resolution tags |
+| [`opinion.md`](opinion.md) | opinion tags for `design-engineer-opinionated` |
 | [`eval-case.template.md`](eval-case.template.md) | `evals/cases/*.md` |
 | [`misalignment-entry.template.md`](misalignment-entry.template.md) | `analysis/misalignment.md` entries |
 

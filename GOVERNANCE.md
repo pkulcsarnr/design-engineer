@@ -28,6 +28,20 @@ Notes:
 - provenance exists
 - source is tracked in [`sources.yml`](sources.yml)
 
+## Opinionated
+
+`opinionated` is a separate output for maintainer-authored or public-blog-inspired rules. Rules:
+
+- items never use `provenance`/`resolution` tags; they use `opinion` tags per [`schemas/opinion.md`](schemas/opinion.md)
+- items do not count toward the `aligned` threshold
+- items do not appear in [`analysis/alignment.md`](analysis/alignment.md) or [`analysis/misalignment.md`](analysis/misalignment.md)
+- `basis=public` items must be rewritten in maintainer voice; no verbatim copying from the cited URL
+- only sources with a permissive or unknown-but-public posture are eligible; all-rights-reserved repos are not eligible
+
+## Extended
+
+`extended` is a wrapper skill that instructs agents to apply `full` first, then `opinionated` where relevant. It contains no standalone rules; precedence and scope are documented inline.
+
 ## Add source
 
 1. add to [`sources.yml`](sources.yml)
@@ -66,3 +80,12 @@ Target: ack 48h, PR 7d.
 ## Disputes
 
 If conflict resolution is unclear, use `defer`. Keep item out of `full` until settled.
+
+## Takedown for opinionated items
+
+If the author of a `basis=public` URL requests removal:
+
+1. remove the item from `skills/design-engineer-opinionated/SKILL.md`
+2. log in [`CHANGELOG.md`](CHANGELOG.md)
+
+Target: ack 48h, PR 7d.

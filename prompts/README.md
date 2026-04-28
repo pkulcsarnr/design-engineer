@@ -18,6 +18,7 @@ Reusable task prompts. Use them, don't freestyle.
 | extract items | [`extract-items.md`](extract-items.md) |
 | classify | [`classify-conflict.md`](classify-conflict.md) |
 | resolve | [`resolve-conflict.md`](resolve-conflict.md) |
+| author opinionated skill | [`author-opinionated-skill.md`](author-opinionated-skill.md) |
 | author eval | [`author-eval.md`](author-eval.md) |
 | validate | [`validate-repo.md`](validate-repo.md) |
 | cut release | [`cut-release.md`](cut-release.md) |

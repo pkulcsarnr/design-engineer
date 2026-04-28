@@ -34,6 +34,10 @@ Then:
 - `C11` no orphan refs (`source=`, `resolution.id`, `sources_probed`)
 - `C12` no bad `TBD` in released artifacts
 - `C13` no emojis in `skills/**/*.md`
+- `C14` every item in `skills/design-engineer-opinionated/SKILL.md` has a valid opinion tag per [`../schemas/opinion.md`](../schemas/opinion.md)
+- `C15` inside `skills/**`, opinion tags appear only in `skills/design-engineer-opinionated/SKILL.md` (examples in `schemas/**` are exempt)
+- `C16` no item carries both `provenance` and `opinion` tags
+- `C17` `skills/design-engineer-extended/SKILL.md` contains no standalone rules, only references to `full` and `opinionated`
 
 ## Notes
 

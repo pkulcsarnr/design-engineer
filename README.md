@@ -1,9 +1,11 @@
 # design-engineer
 
-Merge design-engineer skills into 2 outputs:
+Merge design-engineer skills into 4 outputs:
 
 - `aligned` = shared guidance only
 - `full` = merged guidance + open conflict handling
+- `opinionated` = maintainer-authored UI tactics, not merged from tracked sources
+- `extended` = `full` + `opinionated`, with `full` winning on conflicts
 
 AI-first repo: agents edit via [`prompts/`](prompts/). Humans review. Agents start with [`AGENTS.md`](AGENTS.md).
 
@@ -36,7 +38,7 @@ Quick links:
 - rules: [`CONVENTIONS.md`](CONVENTIONS.md)
 - policy: [`GOVERNANCE.md`](GOVERNANCE.md)
 - sources: [`sources.yml`](sources.yml)
-- outputs: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md)
+- outputs: [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md), [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md), [`skills/design-engineer-opinionated/SKILL.md`](skills/design-engineer-opinionated/SKILL.md), [`skills/design-engineer-extended/SKILL.md`](skills/design-engineer-extended/SKILL.md)
 - analysis: [`analysis/alignment.md`](analysis/alignment.md), [`analysis/misalignment.md`](analysis/misalignment.md)
 - evals: [`evals/README.md`](evals/README.md)
 
@@ -84,10 +86,12 @@ Conflicts + resolutions live in [`analysis/misalignment.md`](analysis/misalignme
 
 1. `aligned` -> safer, narrower, consensus-led. See [`skills/design-engineer-aligned/SKILL.md`](skills/design-engineer-aligned/SKILL.md).
 2. `full` -> broader, merged, conflict-aware. See [`skills/design-engineer-full/SKILL.md`](skills/design-engineer-full/SKILL.md).
+3. `opinionated` -> maintainer-authored UI tactics; not merged from tracked sources. See [`skills/design-engineer-opinionated/SKILL.md`](skills/design-engineer-opinionated/SKILL.md).
+4. `extended` -> wrapper that applies `full` then `opinionated`, with `full` winning on conflicts. See [`skills/design-engineer-extended/SKILL.md`](skills/design-engineer-extended/SKILL.md).
 
 ## Use
 
-- copy `skills/design-engineer-aligned/` or `skills/design-engineer-full/`
+- copy `skills/design-engineer-aligned/`, `skills/design-engineer-full/`, `skills/design-engineer-opinionated/`, or `skills/design-engineer-extended/`
 - or load raw `SKILL.md`
 
 No claim yet that `npx skills add <repo>` works.
@@ -100,4 +104,5 @@ If you're source author and want removal, open issue or contact maintainer. SLA:
 
 - add source -> first update [`sources.yml`](sources.yml)
 - extracted items need provenance tags
+- opinionated items need opinion tags per [`schemas/opinion.md`](schemas/opinion.md); use [`prompts/author-opinionated-skill.md`](prompts/author-opinionated-skill.md)
 - keep attribution intact
